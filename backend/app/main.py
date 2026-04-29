@@ -39,4 +39,9 @@ app.include_router(analysis_router)
 
 @app.get("/health")
 async def health():
-    return {"status": "ok"}
+    return {
+        "status": "ok",
+        "anthropic_key_set": bool(settings.anthropic_api_key),
+        "fmp_key_set": bool(settings.fmp_api_key),
+        "news_key_set": bool(settings.news_api_key),
+    }
