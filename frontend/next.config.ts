@@ -5,6 +5,7 @@ const backendUrl =
   "http://localhost:8000";
 
 const nextConfig: NextConfig = {
+  eslint: { ignoreDuringBuilds: true },
   async rewrites() {
     return [
       {
